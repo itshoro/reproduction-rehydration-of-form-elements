@@ -1,4 +1,18 @@
-/** Add your relevant code here for the issue to reproduce */
+"use client";
+
+import { Fragment, useState } from "react";
+
 export default function Home() {
-  return null;
+  const [ids] = useState([crypto.randomUUID()]);
+
+  return (
+    <>
+      {ids.map((id) => (
+        <Fragment key={id}>
+          <input type="text" name={id} id={id} />
+          <textarea name={id} id={id} />
+        </Fragment>
+      ))}
+    </>
+  );
 }
